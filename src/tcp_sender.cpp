@@ -89,6 +89,7 @@ void tcp_sender::exe()
 
 		FD_ZERO(&fdset);
 		while(!flag_stop_){
+			//usleep(5*1000);
 			FD_SET(sock_, &fdset);
 			tv.tv_sec = 1;
 			tv.tv_usec = 0;
@@ -112,7 +113,7 @@ void tcp_sender::exe()
 			vector<char>* d = data.get();
 			int len = send(sock_, &(*d)[0], data->size(), send_flag);
 			if(len >= 0){
-				cout << "sended size:" << len << endl;
+				//cout << "sended size:" << len << endl;
 				int rest = data->size() - len;
 				if(rest == 0){
 					data = nullptr;

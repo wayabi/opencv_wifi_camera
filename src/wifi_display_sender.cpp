@@ -40,6 +40,6 @@ std::shared_ptr<std::vector<char>> wifi_display_sender::serialize(const cv::Mat&
 	memcpy(c+5, &h, 4);
 	memcpy(c+9, &size, 4);
 	memcpy(c+13, &buf_jpg[0], size);
-	cout << "size:" << ret->size() << endl;
+	//cout << "size:" << ret->size() << endl;
 	return ret;
 }
